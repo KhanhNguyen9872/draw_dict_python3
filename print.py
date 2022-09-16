@@ -1,10 +1,11 @@
 #!/bin/python3
-#Bạn có thể in ra 1 lúc nhiều dict nhưng những dict in ra phải cùng 1 độ dài
+#Bạn có thể in ra 1 lúc nhiều dict bằng cách nhập tên các dict với các khoảng cách
+#VD: a b d c yennhi
 def main():
-    global user_input
-    size=1
+    global user_input, size
+    variable=[]
+    count=0
     portrait=0
-    landscape=999999
     for i in user_input:
         try:
             temp=eval(i)["p"]
@@ -14,21 +15,22 @@ def main():
             exit()
         if (int(temp) > portrait):
 	        portrait=int(temp)
-        if (int(temp1) < landscape):
-	        landscape=int(temp1)
-    del temp
+        variable.append(f"dict{count}")
+        exec(f"dict{count}=1")
+        count+=1
     del temp1
-    size_landscape=int(landscape)
     for i in range (1,portrait+1,1):
+        temp=0
         for char in user_input:
-            for i in range(size,size_landscape+1,1):
+            exec(f"global size; size=int({variable[temp]})")
+            size_landscape=int(size+eval(char)["l"])
+            for i in range(size,size_landscape,1):
                 if (i in eval(char)):
                     print(eval(char)[i],end="")
                 else:
                     print(" ",end="")
-                if (char == user_input[-1]):
-                    size+=1
-                    size_landscape+=1
+            exec(f"{variable[temp]}={size_landscape}")
+            temp+=1
             print(end="  ")
         print(end="\n")
         
@@ -44,4 +46,3 @@ if (__name__=="__main__"):
     print("Nhập tên dict: ",end="")
     user_input=[x for x in input().upper().split(" ")]
     main()
-        
