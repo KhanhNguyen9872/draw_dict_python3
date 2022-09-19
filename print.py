@@ -1,6 +1,6 @@
 #!/bin/python3
 #Bạn có thể in ra 1 lúc nhiều dict bằng cách nhập tên các dict với các khoảng cách
-#VD: a b d c yennhi
+#VD: a b android c yennhi
 def main():
     global user_input, size
     variable=[]
@@ -28,10 +28,10 @@ def main():
                 if (i in eval(char)):
                     print(eval(char)[i],end="")
                 else:
-                    print(" ",end="")
+                    print(end=" ")
             exec(f"{variable[temp]}={size_landscape}")
             temp+=1
-            print(end="  ")
+            print(end=" ")
         print(end="\n")
         
 if (__name__=="__main__"):
