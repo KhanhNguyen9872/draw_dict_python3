@@ -65,9 +65,9 @@ def convert_to_dict(user_input,limit,lines):
     dict["p"]=lines
     save(name,dict)
 def save(name,dict):
-    with open("dict.txt", "a", encoding = 'utf-8') as f:
+    with open("dict.py", "a", encoding = 'utf-8') as f:
         f.write(f"\n{name}={dict}")
-        print("Saved to dict.txt file!")
+        print("Saved to dict.py file!")
     exit()
 
 if (__name__ == "__main__"):

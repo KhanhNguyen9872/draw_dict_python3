@@ -35,14 +35,7 @@ def main():
         print(end="\n")
         
 if (__name__=="__main__"):
-    with open("dict.txt", "r", encoding = 'utf-8') as f:
-        file = f.readlines()
-        for i in file:
-            exec(i)
-            try:
-                exec(f"""global {i.split("=")[0]}""")
-            except:
-            	continue
+    from dict import *
     print("Nhập tên dict: ",end="")
     user_input=[x for x in input().upper().split(" ")]
     main()
