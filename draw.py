@@ -1,9 +1,9 @@
 #!/bin/python3
 def clear():
-    if (os.name == 'nt'):
-        os.system("cls")
+    if (name == 'nt'):
+        system("cls")
     else:
-        os.system("clear")
+        system("clear")
 def main():
 	global name, limit, num
 	print(f"Tên dict: {name}\nNhập dấu * [Độ dài: {limit}]\n Gõ [cmd save] để hoàn tất!\n Gõ [cmd clear] để xóa toàn bộ dòng\n Gõ [cmd del] để xóa 1 dòng trước đó\n Gõ [cmd undo] để khôi phục lại dòng trước đó\n Gõ [cmd exit] để thoát\n\n{num}")
