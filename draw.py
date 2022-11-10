@@ -71,7 +71,8 @@ def save(name,dict):
     exit()
 
 if (__name__ == "__main__"):
-    import os
+    from os import system,name
+    from sys import exit
     num=""
     count=1
     name=""
